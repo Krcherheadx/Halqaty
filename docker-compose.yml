@@ -1,0 +1,12 @@
+services:
+  db:
+    image: mysql:8.0.42
+    container_name: mushreffy
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: mushreffy
+      MYSQL_USER: hisham
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3307:3306"
