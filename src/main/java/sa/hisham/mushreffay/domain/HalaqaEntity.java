@@ -1,4 +1,4 @@
-package sa.hisham.mushreffay.model;
+package sa.hisham.mushreffay.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,13 +14,13 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class HalaqaModel {
+public class HalaqaEntity {
     @Column(name = "halaqa_name", nullable = false)
     String halaqaName;
     @OneToMany(mappedBy = "halaqa")
-    List<TeacherEnrollmentModel> teachersEnrollments;
+    List<TeacherEnrollmentEntity> teachersEnrollments;
     @OneToMany(mappedBy = "halaqa")
-    List<StudentEnrollmentModel> studentsEnrollments;
+    List<StudentEnrollmentEntity> studentsEnrollments;
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;

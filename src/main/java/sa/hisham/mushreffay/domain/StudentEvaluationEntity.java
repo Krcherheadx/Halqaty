@@ -1,4 +1,4 @@
-package sa.hisham.mushreffay.model;
+package sa.hisham.mushreffay.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,22 +9,25 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
-@Table(name = "teacher")
+@Table(name = "student_evaluation")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TeacherModel {
-    @ManyToMany(fetch = FetchType.LAZY)
-    List<StudentModel> students;
-    @OneToMany(mappedBy = "teacher")
-    List<TeacherEnrollmentModel> enrollments;
+public class StudentEvaluationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+
+    private LocalDateTime startDate;
+
+    private LocalDateTime endDate;
+
+    @Column(name = "is_active")
+    private boolean isActive;
+
 
     @Column(name = "created_at")
     @CreationTimestamp

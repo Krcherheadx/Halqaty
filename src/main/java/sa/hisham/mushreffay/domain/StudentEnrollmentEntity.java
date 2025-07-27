@@ -1,4 +1,4 @@
-package sa.hisham.mushreffay.model;
+package sa.hisham.mushreffay.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class StudentEnrollmentModel<T> {
+public class StudentEnrollmentEntity<T> {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
@@ -26,10 +26,10 @@ public class StudentEnrollmentModel<T> {
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "student_id")
-    private StudentModel student;
+    private StudentEntity student;
     @JoinColumn(name = "halaqa_id")
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    private HalaqaModel halaqa;
+    private HalaqaEntity halaqa;
 
 
 }

@@ -1,4 +1,4 @@
-package sa.hisham.mushreffay.dto;
+package sa.hisham.mushreffay.domain.dto;
 
 
 import jakarta.validation.constraints.NotBlank;

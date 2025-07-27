@@ -1,4 +1,4 @@
-package sa.hisham.mushreffay.model;
+package sa.hisham.mushreffay.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,6 +26,6 @@ public class GuardianModel {
     @Column(name = "relation_type")
     private GuardianRelationTypeEnum relationType;
     @OneToOne(mappedBy = "guardian")
-    private StudentModel student;
+    private StudentEntity student;
 
 }

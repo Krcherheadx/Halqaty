@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sa.hisham.mushreffay.dto.SignupStudentDto;
-import sa.hisham.mushreffay.model.StudentModel;
+import sa.hisham.mushreffay.domain.StudentEntity;
+import sa.hisham.mushreffay.domain.dto.SignupStudentDto;
 import sa.hisham.mushreffay.service.StudentService;
 
 @RestController
@@ -19,9 +19,9 @@ public class StudentController {
     private final StudentService studentService;
 
     @PostMapping()
-    public ResponseEntity<StudentModel> signup(@Valid @RequestBody SignupStudentDto signupStudentDto) {
-        StudentModel studentModel = studentService.signupStudent(signupStudentDto);
+    public ResponseEntity<StudentEntity> signup(@Valid @RequestBody SignupStudentDto signupStudentDto) {
+        StudentEntity studentEntity = studentService.signupStudent(signupStudentDto);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(studentModel);
+        return ResponseEntity.status(HttpStatus.CREATED).body(studentEntity);
     }
 }
