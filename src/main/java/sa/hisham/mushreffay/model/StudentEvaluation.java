@@ -25,6 +25,7 @@ public class StudentEvaluation {
 
     private LocalDateTime endDate;
 
+    @Column(name = "is_active")
     private boolean isActive;
 
 

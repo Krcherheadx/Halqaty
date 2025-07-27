@@ -13,4 +13,6 @@ public class SignupStudentDto {
     @NotBlank
     String lastName;
 
+    String dateOfBirth;
+
 }

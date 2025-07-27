@@ -13,14 +13,15 @@ import sa.hisham.mushreffay.model.StudentModel;
 import sa.hisham.mushreffay.service.StudentService;
 
 @RestController
-@RequestMapping(path = "/student")
+@RequestMapping(path = "/students")
 @RequiredArgsConstructor
 public class StudentController {
     private final StudentService studentService;
 
-    @PostMapping(path = "/signup")
+    @PostMapping()
     public ResponseEntity<StudentModel> signup(@Valid @RequestBody SignupStudentDto signupStudentDto) {
         StudentModel studentModel = studentService.signupStudent(signupStudentDto);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(studentModel);
     }
 }

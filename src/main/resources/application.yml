@@ -10,7 +10,7 @@ spring:
   # JPA Configuration
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     properties:
       hibernate: dialect:org.hibernate.dialect.MySQL8Dialect
 
@@ -22,7 +22,7 @@ spring:
 server:
   port: ${SERVER_PORT:8080}
 
-# Logging
+# SpringDoc Configuration
 
 
 
