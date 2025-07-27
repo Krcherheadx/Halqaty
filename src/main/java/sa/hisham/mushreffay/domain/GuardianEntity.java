@@ -13,7 +13,7 @@ import sa.hisham.mushreffay.enums.GuardianRelationTypeEnum;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class GuardianModel {
+public class GuardianEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;

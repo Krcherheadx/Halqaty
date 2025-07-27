@@ -30,7 +30,7 @@ public class StudentEntity {
     @Column(name = "date_of_birth")
     private LocalDateTime dateOfBirth;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private GuardianModel guardian;
+    private GuardianEntity guardian;
 
 
 }
