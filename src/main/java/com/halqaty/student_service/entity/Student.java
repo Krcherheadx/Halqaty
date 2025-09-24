@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Table(name = "student")
 @AllArgsConstructor
 @NoArgsConstructor
-@SQLRestriction("deleted <> false")
+@SQLRestriction("deleted <> true")
 public class Student {
 
     @Id
@@ -35,5 +35,8 @@ public class Student {
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @Column(name = "deleted", columnDefinition = "Boolean")
+    private boolean deleted = false;
 
 }

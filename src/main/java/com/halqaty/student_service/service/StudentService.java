@@ -1,10 +1,14 @@
 package com.halqaty.student_service.service;
 
 import com.halqaty.student_service.dto.CreateStudentRequestDto;
-import com.halqaty.student_service.dto.CreateStudentResponseDto;
+import com.halqaty.student_service.dto.StudentResponseDto;
+
+import java.util.List;
 
 
 public interface StudentService {
 
-    CreateStudentResponseDto createStudent(CreateStudentRequestDto requestDto);
+    StudentResponseDto createStudent(CreateStudentRequestDto requestDto);
+
+    List<StudentResponseDto> getAllStudents();
 }

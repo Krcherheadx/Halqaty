@@ -1,7 +1,7 @@
 package com.halqaty.student_service.mapper.impl;
 
 import com.halqaty.student_service.dto.CreateStudentRequestDto;
-import com.halqaty.student_service.dto.CreateStudentResponseDto;
+import com.halqaty.student_service.dto.StudentResponseDto;
 import com.halqaty.student_service.entity.Student;
 import com.halqaty.student_service.mapper.StudentMapper;
 import org.springframework.stereotype.Component;
@@ -18,8 +18,8 @@ public class StudentMapperImpl implements StudentMapper {
     }
 
     @Override
-    public CreateStudentResponseDto mapToResponse(Student student) {
-        CreateStudentResponseDto.CreateStudentResponseDtoBuilder responseDtoBuilder = CreateStudentResponseDto.builder();
+    public StudentResponseDto mapToResponse(Student student) {
+        StudentResponseDto.StudentResponseDtoBuilder responseDtoBuilder = StudentResponseDto.builder();
         responseDtoBuilder.id(student.getId());
         responseDtoBuilder.firstName(student.getFirstName());
         responseDtoBuilder.lastName(student.getLastName());
