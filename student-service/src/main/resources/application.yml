@@ -1,0 +1,18 @@
+spring.application.name: student-service
+
+spring:
+  #Database Configurations
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5433}/${POSTGRES_DB:student}
+    username: ${POSTGRES_USER:hisham}
+    password: ${POSTGRES_PASSWORD}
+
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 8091
