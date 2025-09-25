@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1758793899028-1
+      author: H.AlSuhaibani
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_teacher
+                  name: id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: first_name
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: last_name
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: email
+                  type: VARCHAR(200)
+              - column:
+                  name: user_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  name: deleted
+                  type: Boolean
+            tableName: teacher
+  - changeSet:
+      id: 1758793899028-2
+      author: H.AlSuhaibani
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: email
+            constraintName: uc_teacher_email
+            tableName: teacher
+

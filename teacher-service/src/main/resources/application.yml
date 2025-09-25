@@ -2,14 +2,15 @@ spring.application.name: teacher-service
 spring:
   #Database Configurations
   datasource:
-    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5433}/${POSTGRES_DB:student}
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5434}/${POSTGRES_DB:teacher}
     username: ${POSTGRES_USER:hisham}
     password: ${POSTGRES_PASSWORD}
 
   # JPA Configuration
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
+    #      ddl-auto: create-drop This to tell Hibernate to generate the ddl, however, we'll turn it off to use Flyway instead
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect

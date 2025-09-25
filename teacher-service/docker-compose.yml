@@ -12,4 +12,4 @@ services:
     ports:
       - "${POSTGRES_PORT}:5432"
 volumes:
-   teacher_service_db:
+  teacher_service_db:
