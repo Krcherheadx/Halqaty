@@ -1,0 +1,18 @@
+spring.application.name: halaqa-service
+spring:
+  #Database Configurations
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5435}/${POSTGRES_DB:halaqa}
+    username: ${POSTGRES_USER:hisham}
+    password: ${POSTGRES_PASSWORD}
+
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: none
+    #      ddl-auto: create-drop This to tell Hibernate to generate the ddl, however, we'll turn it off to use Flyway instead
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 8092
