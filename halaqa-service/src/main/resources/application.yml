@@ -2,7 +2,7 @@ spring.application.name: halaqa-service
 spring:
   #Database Configurations
   datasource:
-    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5435}/${POSTGRES_DB:halaqa}
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5441}/${POSTGRES_DB:halaqa}
     username: ${POSTGRES_USER:hisham}
     password: ${POSTGRES_PASSWORD}
 

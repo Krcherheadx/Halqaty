@@ -2,7 +2,7 @@ spring.application.name: teacher-service
 spring:
   #Database Configurations
   datasource:
-    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5434}/${POSTGRES_DB:teacher}
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5443}/${POSTGRES_DB:teacher}
     username: ${POSTGRES_USER:hisham}
     password: ${POSTGRES_PASSWORD}
 
